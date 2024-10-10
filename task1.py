@@ -16,6 +16,17 @@ def roll():
     
     return roll 
 
+def random_event():
+    events = [
+        ("🌟 SpeaceX bonus! +50 points", 50),
+        ("👤 To see one's enemy! -30 points", -30),
+        ("🐶 Found a DOGE COIN! +100 points", 100),
+        ("🌑 Black hole ... No effect", 0)
+    ]
+    event = random.choice(events)
+    print(event[0])
+    return event[1]
+
 #Getting the Number of Players
 while True:
     players = input("Elon Mask: Welcome to Speace X! Enter the number of players (15 - 50):")
@@ -52,6 +63,8 @@ while max(player_scores) < max_score:
             else:
                 current_score += value
                 print("You go to sky a:", value)
+
+            current_score += random_event()
 
             print("Total Moon Score is:", current_score)
 
